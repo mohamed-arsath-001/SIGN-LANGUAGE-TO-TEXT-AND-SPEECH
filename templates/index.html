@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+    </html>
+<body>
+    <div class="container">
+        <h1>Sign Language to Text & Speech Converter</h1>
+        
+        <div class="video-container">
+            <video id="videoElement" autoplay playsinline></video>
+            <canvas id="canvasElement"></canvas>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn">Start Camera</button>
+            <button id="stopBtn" disabled>Stop Camera</button>
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+            </select>
+        </div>
+
+        <div class="output">
+            <div class="text-output">
+                <h3>Detected Text:</h3>
+                <p id="textOutput"></p>
+            </div>
+            <div class="audio-controls">
+                <button id="speakBtn" disabled>Speak Text</button>
+                <audio id="audioElement" controls style="display: none;"></audio>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
